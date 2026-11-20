@@ -104,7 +104,7 @@
 				<p class="mt-1.5 text-xs text-red-600">{errors.consumptionDate[0]}</p>
 				{#if existingId}
 					<a
-						href={`/reports/feed-consumption/${existingId}`}
+						href={`/reports/feed-consumptions/${existingId}`}
 						class="mt-1 inline-flex items-center gap-1 text-xs font-medium text-amber-600 hover:text-amber-700"
 					>
 						→ Open the existing entry (#{existingId})
