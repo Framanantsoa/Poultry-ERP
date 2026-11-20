@@ -70,45 +70,44 @@
 			<p class="mt-1 text-sm text-stone-600">Create your first batch to start tracking production.</p>
 		</div>
 	{:else}
-		<div class="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
-			<table class="w-full text-left text-sm">
+		<div class="min-w-0 overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-sm">
+			<table class="w-full min-w-[540px] text-left text-sm">
 				<thead class="border-b border-stone-200 bg-stone-50 text-xs uppercase tracking-wider text-stone-500">
 					<tr>
-						<th class="px-5 py-3 font-medium">Code</th>
-						<th class="px-5 py-3 font-medium">Name</th>
-						<th class="hidden px-5 py-3 font-medium sm:table-cell">Breed</th>
-						<th class="px-5 py-3 font-medium text-center">Birds</th>
-						<th class="hidden px-5 py-3 font-medium md:table-cell">Arrival</th>
-						<th class="px-5 py-3 font-medium">Status</th>
-						<th class="px-5 py-3 font-medium text-right">Actions</th>
+						<th class="px-3 py-3 font-medium sm:px-5">Code</th>
+						<th class="px-3 py-3 font-medium sm:px-5">Name</th>
+						<th class="hidden px-3 py-3 font-medium sm:table-cell sm:px-5">Breed</th>
+						<th class="px-3 py-3 text-center font-medium sm:px-5">Birds</th>
+						<th class="hidden px-3 py-3 font-medium md:table-cell md:px-5">Arrival</th>
+						<th class="px-3 py-3 font-medium sm:px-5">Status</th>
+						<th class="px-3 py-3 text-right font-medium sm:px-5">Actions</th>
 					</tr>
 				</thead>
 				<tbody class="divide-y divide-stone-100">
 					{#each data.batches as b (b.id)}
 						<tr class="transition hover:bg-stone-50/60">
-							<td class="px-5 py-4 font-mono text-xs text-stone-600">{b.code}</td>
-							<td class="px-5 py-4 font-medium text-stone-900">
-								<a href="/batches/{b.id}/edit" class="hover:text-amber-600 transition">{b.name}</a>
+							<td class="whitespace-nowrap px-3 py-3 font-mono text-xs text-stone-600 sm:px-5 sm:py-4">{b.code}</td>
+							<td class="px-3 py-3 font-medium text-stone-900 sm:px-5 sm:py-4">
+								<a href="/batches/{b.id}/edit" class="transition hover:text-amber-600">{b.name}</a>
 							</td>
-							<td class="hidden px-5 py-4 text-stone-600 sm:table-cell">{b.breedName ?? '—'}</td>
-							<td class="px-5 py-4 text-center text-stone-700">
+							<td class="hidden whitespace-nowrap px-3 py-3 text-stone-600 sm:table-cell sm:px-5 sm:py-4">{b.breedName ?? '—'}</td>
+							<td class="whitespace-nowrap px-3 py-3 text-center text-stone-700 sm:px-5 sm:py-4">
 								<span class="font-medium">{b.currentCount}</span>
 								<span class="text-stone-400">/ {b.initialCount}</span>
 							</td>
-							<td class="hidden px-5 py-4 text-stone-600 md:table-cell">{formatLongDate(b.arrivalDate)}</td>
-							<td class="px-5 py-4">
+							<td class="hidden whitespace-nowrap px-3 py-3 text-stone-600 md:table-cell md:px-5 sm:py-4">{formatLongDate(b.arrivalDate)}</td>
+							<td class="whitespace-nowrap px-3 py-3 sm:px-5 sm:py-4">
 								<span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {statusBadgeClass(b.status)}">
 									{b.status}
 								</span>
 							</td>
-							<td class="px-5 py-4 text-right">
-								<div class="inline-flex gap-2">
-									<a href="/batches/{b.id}/edit"
-										class="rounded-lg px-3 py-1.5 text-xs font-medium text-stone-700 transition hover:bg-stone-100"
-									>
-										Edit
-									</a>
-								</div>
+							<td class="whitespace-nowrap px-3 py-3 text-right sm:px-5 sm:py-4">
+								<a
+									href="/batches/{b.id}/edit"
+									class="rounded-lg px-2.5 py-1.5 text-xs font-medium text-stone-700 transition hover:bg-stone-100 sm:px-3"
+								>
+									Edit
+								</a>
 							</td>
 						</tr>
 					{/each}

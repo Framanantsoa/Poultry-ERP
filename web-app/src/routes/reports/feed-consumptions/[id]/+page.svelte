@@ -136,7 +136,7 @@
 					}}
 					errors={form?.errors}
 					submitLabel="Save changes"
-					cancelHref="/reports/feed-consumption/{data.row.id}"
+					cancelHref="/reports/feed-consumptions/{data.row.id}"
 				/>
 			</div>
 		{/if}
