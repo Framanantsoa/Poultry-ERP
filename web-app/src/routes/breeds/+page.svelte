@@ -77,7 +77,7 @@
 		</div>
 	{:else}
 		<!-- Table -->
-		<div class="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+		<div class="min-w-0 overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-sm">
 			<table class="w-full text-left text-sm">
 				<thead class="border-b border-stone-200 bg-stone-50 text-xs uppercase tracking-wider text-stone-500">
 					<tr>

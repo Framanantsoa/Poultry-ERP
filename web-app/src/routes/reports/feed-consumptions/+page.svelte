@@ -109,7 +109,7 @@
 			</a>
 		</div>
 	{:else}
-		<div class="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+		<div class="min-w-0 overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-sm">
 			<table class="min-w-full divide-y divide-stone-200">
 				<thead class="bg-stone-50">
 					<tr>
